@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         AddToFavorites
+// @name         AddToFavorite
 // @namespace    http://tampermonkey.net/
 // @version      1.5b
 // @description  Сохраняй интересные тебе страницы сайта, не пребегая к закладкам!
