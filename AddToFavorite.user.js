@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         AddToFavorite
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/AlekPet/
 // @version      1.5b
 // @description  Сохраняй интересные тебе страницы сайта, не пребегая к закладкам!
 // @author       AlexPet | e-mail: alexepetrof@gmail.com
