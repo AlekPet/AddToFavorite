@@ -18,13 +18,13 @@
 
 /* Changelog
 [update 22.09.2017]
-Добавил кнопки для правки  удаления доменов и ссылок / Add buttons edit domains, links and delete
++Добавил кнопки для правки  удаления доменов и ссылок / Add buttons edit domains, links and delete
 
 [update 28.11.2016]
-Добавил кнопку настроен и возможность сохранить бэкап / Add button setting, and save data
++Добавил кнопку настроен и возможность сохранить бэкап / Add button setting, and save data
 
 [update 29.10.2016]
-Добавленая синхронизация с другими вкладками / Add Synchronized other tabs save data. 
++Добавленая синхронизация с другими вкладками / Add Synchronized other tabs save data.
 */
 
 //Javascript Punycode converter derived from example in RFC3492.
@@ -718,7 +718,7 @@ try{
 
     var rcol = "#"+hex(Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255))+", #"+ hex(Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255));    
     var body_domena = makeElem("div", null, "body_domena_el", null, null, null);
-    var title_domena = makeElem("div", "background: linear-gradient("+rcol+"); border-radius: 8px 8px 8px 8px;", "div_Fav_win_title", domeni, domeni, "domen_"+((!search_work)?kol_ob:arrs_search[1][kol_ob]));
+    var title_domena = makeElem("div", "background: linear-gradient("+rcol+"); border-radius: 8px 8px 8px 8px;", "div_Fav_win_title", ((domeni.length>20)?domeni.substr(0,20)+" ...":domeni), domeni, "domen_"+((!search_work)?kol_ob:arrs_search[1][kol_ob]));
     var delete_button_domain = makeElem("div", null, "div_Fav_button div_Fav_del_button", "x", "Удалить домен!", null);
     var edit_button_domain = makeElem("div", null, "div_Fav_button div_Fav_ed_button", "e", "Править домен!", null);        
     var hide_elem =  makeElem("div", "display:"+((disp[kol_ob])?"block":"none"), null, null, null, null);
