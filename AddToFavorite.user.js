@@ -5,6 +5,9 @@
 // @description  Сохраняй интересные тебе страницы сайта, не пребегая к закладкам!
 // @author       AlexPet | e-mail: alexepetrof@gmail.com
 // @match        http*://*/*
+// @updateURL    https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
+// @downloadURL  https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
+// @run-at document-end
 // @grant GM_setValue
 // @grant GM_getValue
 // @grant GM_addStyle
