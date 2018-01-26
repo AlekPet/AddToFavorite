@@ -1000,7 +1000,6 @@ function init(){
        if($(".button_set")[0].textContent==="Сохранить"){
        if(confirm("ВНИМАНИЕ:\nВы внесли изменения в базу данных ссылок!\nНеверные изминения в структуре может повредить всю базу!\nСделайте резервную копию!\nВы хотите внести сохранить изменения ?")){
            let txtVal = $("#texarea_set").val();
-           console.log(txtVal);
            if(txtVal != "" && /^\s*$/.test(txtVal) && !/^{.*}$/.test(txtVal)){
                alert("Не правильные данные!");
                return;
