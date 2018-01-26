@@ -395,7 +395,7 @@ GM_addStyle("\
           .setting_button{}\
           .divFav_buttons_style:hover{background: linear-gradient(#4fefef,rgb(28, 146, 216));}\
           .button_set{width: 130px;margin: 8px auto;padding: 3px;}\
-          .setting_button_panel{position:absolute;width:260px;right: 270px;border: 1px solid silver; background: linear-gradient(rgba(255, 255, 255, 0.83),rgba(192, 192, 192, 0.83));text-align: center;-webkit-user-select: none;;border-radius:5px;box-shadow: 1px 1px 3px silver;}\
+          .setting_button_panel{position:fixed;width:260px;right: 285px;bottom: 90px;border: 1px solid silver; background: linear-gradient(rgba(255, 255, 255, 0.83),rgba(192, 192, 192, 0.83));text-align: center;-webkit-user-select: none;;border-radius:5px;box-shadow: 1px 1px 3px silver;}\
           \
           .divFav_Win_alert{ position: fixed;    top: 0; left: 0;   border: 1px solid silver;    width: 100%;    text-align: center;    font-weight: bold;    padding: 5px;    font-size: 12pt;    text-shadow: 1px 1px 2px black;z-index: 999999999;}\
           #divFav_B_search_button{border-radius:8px 8px; background:#ffffff;color:#0083ff;margin-right: 5px;;padding: 2px 2px;outline: none;}\
@@ -428,6 +428,7 @@ GM_addStyle("\
 
 (function() {
 'use strict';
+if (window.top != window.self)  return;
     
 var ls_value = GM_getValue('list_fav');
 var addf = (ls_value)?JSON.parse(GM_getValue('list_fav')):{};
@@ -998,7 +999,13 @@ function init(){
    $(".setting_button, .button_set").on( "click",function(){       
        if($(".button_set")[0].textContent==="Сохранить"){
        if(confirm("ВНИМАНИЕ:\nВы внесли изменения в базу данных ссылок!\nНеверные изминения в структуре может повредить всю базу!\nСделайте резервную копию!\nВы хотите внести сохранить изменения ?")){
-       saveToStorage();
+           let txtVal = $("#texarea_set").val();
+           console.log(txtVal);
+           if(txtVal != "" && /^\s*$/.test(txtVal) && !/^{.*}$/.test(txtVal)){
+               alert("Не правильные данные!");
+               return;
+           }
+       saveToStorage(txtVal);
        showAlert("Данные успешно сохранены в базе ссылок!",{col1:"rgba(0, 255, 79, 0.8)",col2:"rgba(9, 84, 6, 0.75)",text_col:"white"});
        } else {
        showAlert("Вы отказались от сохранения данных!",{col1:"rgba(243, 30, 161, 0.83)",col2:"rgba(55, 1, 13, 0.74)",text_col:"white"});
