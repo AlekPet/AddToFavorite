@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AddToFavorite
 // @namespace    https://github.com/AlekPet/
-// @version      1.5b
+// @version      1.6b
 // @description  Сохраняй интересные тебе страницы сайта, не пребегая к закладкам!
 // @author       AlexPet | e-mail: alexepetrof@gmail.com
 // @license     MIT;
