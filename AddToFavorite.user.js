@@ -10,6 +10,7 @@
 // @downloadURL  https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
 // @icon          https://raw.githubusercontent.com/AlekPet/AddToFavorite/master/assets/images/icon.png
 // @run-at document-end
+// @noframes
 // @grant GM_setValue
 // @grant GM_getValue
 // @grant GM_addStyle
