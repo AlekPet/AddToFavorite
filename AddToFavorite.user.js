@@ -4,7 +4,7 @@
 // @version      1.6
 // @description  Сохраняй интересные тебе страницы сайта, не пребегая к закладкам!
 // @author       AlexPet | e-mail: alexepetrof@gmail.com
-// @license     MIT;
+// @license     MIT;  https://opensource.org/licenses/MIT
 // @match        http*://*/*
 // @updateURL    https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
 // @downloadURL  https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
@@ -1002,9 +1002,19 @@ function init(){
        if(confirm("ВНИМАНИЕ:\nВы внесли изменения в базу данных ссылок!\nНеверные изминения в структуре может повредить всю базу!\nСделайте резервную копию!\nВы хотите внести сохранить изменения ?")){
            let txtVal = $("#texarea_set").val();
            if(txtVal != "" && /^\s*$/.test(txtVal) && !/^{.*}$/.test(txtVal)){
-               alert("Не правильные данные!");
+               alert("Неправильные данные!");
+               texarea_set.value = JSON.stringify(addf);
                return;
            }
+           
+           try{
+               JSON.parse(txtVal);
+           }catch(e){
+               alert("Неправильные данные!\n"+e.name);
+               texarea_set.value = JSON.stringify(addf);
+               return;
+           }
+
        saveToStorage(txtVal);
        showAlert("Данные успешно сохранены в базе ссылок!",{col1:"rgba(0, 255, 79, 0.8)",col2:"rgba(9, 84, 6, 0.75)",text_col:"white"});
        } else {
