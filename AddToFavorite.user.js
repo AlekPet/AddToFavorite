@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         AddToFavorite
 // @namespace    https://github.com/AlekPet/
-// @version      1.6
+// @version      1.6.1
 // @description  Сохраняй интересные тебе страницы сайта, не пребегая к закладкам!
 // @author       AlexPet | e-mail: alexepetrof@gmail.com
-// @license     MIT;  https://opensource.org/licenses/MIT
+// @license     MIT;  https://raw.githubusercontent.com/AlekPet/AddToFavorite/master/LICENSE
 // @match        http*://*/*
 // @updateURL    https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
 // @downloadURL  https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
@@ -364,16 +364,16 @@ provided that redistributed derivative works do not contain misleading author or
 GM_addStyle("\
            .spanplus{color: #727272; float:none;margin:4px 0;box-sizing: content-box;text-align: center; */ }\
            \
-           .divFav_panel_button{position: fixed; bottom: 50px; right: 15px; z-index:9999;font: small arial,sans-serif;  margin: 0; text-align: center;}\
+           .divFav_panel_button{position: fixed; bottom: 50%; right: 0px; z-index:9999;font: small arial,sans-serif;  margin: 0; text-align: center;    background: linear-gradient(to right,#bfbfbf,#929292);border-radius: 8px 0 0 8px;border: 1px solid silver;opacity: 0.8;}\
             \
-           .div_FavB{width: 25px;height: 25px; border: 1px solid silver; background: linear-gradient(rgba(255, 255, 255, 0.53),rgba(192, 192, 192, 0.83));text-align: center;-webkit-user-select: none; cursor: pointer;border-radius:5px;box-shadow: 1px 1px 3px silver;float: left;margin: 0 5px;}           \
-           .div_FavB:hover{background: linear-gradient(rgba(121, 120, 120, 0.61),rgba(236, 229, 229, 0.75));}\
+           .div_FavB{width: 15px;height: 25px; border: 1px solid silver; background: linear-gradient(rgba(255, 255, 255, 1.0),rgba(192, 192, 192, 1.0));text-align: center;-webkit-user-select: none; cursor: pointer;border-radius:5px;box-shadow: 1px 1px 3px silver; margin: 5px 5px;border: 1px solid #7d7c7c;}\
+           .div_FavB:hover{background: linear-gradient(rgb(184, 255, 189),rgb(42, 255, 88));}\
            \
-           .div_Fav_window{position: fixed; bottom: 90px; right: 15px; z-index:9999;border: 1px solid #e4e4e4;   width: 240px; background: linear-gradient(#efefef,white); padding: 10px;    border-radius: 4px;    box-shadow: 1px 1px 3px #676464;box-sizing: content-box;font-size: small;;}\
+           .div_Fav_window{position: fixed; bottom: 5px; right: 40px;z-index:9999;border: 1px solid #e4e4e4;   width: 240px; background: linear-gradient(#efefef,white); padding: 10px;    border-radius: 4px;    box-shadow: 1px 1px 3px #676464;box-sizing: content-box;font-size: small;;}\
            .div_Fav_window_inner{ overflow: auto; max-height: 500px;padding-right: 20px;box-sizing: content-box;}\
            \
-           .div_Fav_win_title{padding: 5px;    color: white;    font-size: 8pt;    text-shadow: 2px 2px 1px silver;    text-align: center;cursor:pointer;box-sizing: content-box;}\
-           .div_Fav_win_title:hover{font-size:10pt;}\
+           .div_Fav_win_title{padding: 5px;    color: white;    font-size: 8pt;    text-shadow: 2px 2px 1px silver;    text-align: center;cursor:pointer;box-sizing: content-box;line-height: 1.5;}\
+           .div_Fav_win_title:hover{font-size:10pt; line-height: 1.1;}\
            \
            .div_Fav_ahref{color: #727272; top: 5px; font-weight: bolder;text-decoration:none;font-size:8pt; display:inline-block;box-sizing: content-box;}\
            .div_Fav_ahref:hover{color: #53b74a !important; font-size:9pt;}\
@@ -381,7 +381,7 @@ GM_addStyle("\
            .div_Fav_ahref:visited{color: #2293cf;}\
            \
            .div_Fav_button{float: right;  width: 15px;  height: 15px; border-radius: 6px; text-align: center; cursor:pointer;box-sizing: content-box;}\
-           .div_Fav_button_link{float: right;  width: 15px;  height: 15px; border-radius: 6px; text-align: center; cursor:pointer;box-sizing: content-box;}\
+           .div_Fav_button_link{float: right;  width: 15px;  height: 15px; border-radius: 6px; text-align: center; cursor:pointer;box-sizing: content-box;line-height: 1.3;}\
            .div_Fav_button_link:hover,.div_Fav_button:hover{background: linear-gradient(#dcdcdb,#cfcfcf);}\
            \
            .div_Fav_del_button{color: #7f7f7f; background: linear-gradient(white,#b7b3b3);}\
@@ -396,7 +396,7 @@ GM_addStyle("\
           .setting_button{}\
           .divFav_buttons_style:hover{background: linear-gradient(#4fefef,rgb(28, 146, 216));}\
           .button_set{width: 130px;margin: 8px auto;padding: 3px;}\
-          .setting_button_panel{position:fixed;width:260px;right: 285px;bottom: 90px;border: 1px solid silver; background: linear-gradient(rgba(255, 255, 255, 0.83),rgba(192, 192, 192, 0.83));text-align: center;-webkit-user-select: none;;border-radius:5px;box-shadow: 1px 1px 3px silver;}\
+          .setting_button_panel{position:fixed;width:260px;right: 310px;bottom: 5px;border: 1px solid silver; background: linear-gradient(rgba(255, 255, 255, 0.83),rgba(192, 192, 192, 0.83));text-align: center;-webkit-user-select: none;;border-radius:5px;box-shadow: 1px 1px 3px silver;}\
           \
           .divFav_Win_alert{ position: fixed;    top: 0; left: 0;   border: 1px solid silver;    width: 100%;    text-align: center;    font-weight: bold;    padding: 5px;    font-size: 12pt;    text-shadow: 1px 1px 2px black;z-index: 999999999;}\
           #divFav_B_search_button{border-radius:8px 8px; background:#ffffff;color:#0083ff;margin-right: 5px;;padding: 2px 2px;outline: none;}\
@@ -431,23 +431,31 @@ GM_addStyle("\
 'use strict';
 if (window.top != window.self)  return;
     
-var ls_value = GM_getValue('list_fav');
-var addf = (ls_value)?JSON.parse(GM_getValue('list_fav')):{};
-    
+var ls_value = GM_getValue('list_fav'),
+
+addf = (ls_value)?JSON.parse(GM_getValue('list_fav')):{};
+
+if(!addf.hasOwnProperty("list")) addf = {list: addf};
+
 GM_addValueChangeListener('list_fav', function() {   
-ls_value = GM_getValue('list_fav');
-addf = (ls_value)?JSON.parse(GM_getValue('list_fav')):{}; 
-updateList();
+    ls_value = GM_getValue('list_fav');
+
+    addf = (ls_value)?JSON.parse(GM_getValue('list_fav')):{};
+
+    if(!addf.hasOwnProperty("list")) addf = {list: addf};
+
+    updateList();
 });
     
     
 function hex(r,g,b){
-var hexv="0123456789ABCDEF";
-var valhex="";
-var ff=[r,g,b];
+var hexv="0123456789ABCDEF",
+    valhex="",
+    ff=[r,g,b];
+
 for(var i=0;i<3;i++){
-var del= ff[i] % 16;
-var di=Math.floor(ff[i]/16);
+var del= ff[i] % 16,
+    di=Math.floor(ff[i]/16);
 if(ff[i]>=255){ 
 valhex+="FF";
 } else if(ff[i]<=0){
@@ -475,7 +483,7 @@ function deleteDomain(el){
 try{
     if(confirm("Вы действительно хотите удалить домен?")){
     var el_target = el.target;
-    delete addf[el_target.parentElement.title];
+    delete addf.list[el_target.parentElement.title];
     saveToStorage(); 
     showAlert("Домен \""+el_target.parentElement.title+"\" был удален!",{col1:"rgba(233, 30, 161, 0.83)",col2:"rgba(35, 1, 13, 0.74)",text_col:"white"});
     }
@@ -486,8 +494,8 @@ try{
     
 function checInputValue(param){
     try{
-    var text = param.text;
-    var tip_texta = param.tip;
+    var text = param.text,
+        tip_texta = param.tip;
 
     if(text.length>0 && text !== null && text !== undefined && !/^$/g.test(text) && !/(^$|^\s+$)/g.test(text)){
     
@@ -522,8 +530,8 @@ if($("#pole_edit_domain_sites").is(":visible")){
              if(!checInputValue({text:$("#pole_edit_domain_sites_input_d_lt").val(),tip:"title"})){return;} 
 
              if($("#pole_edit_domain_sites_input_d_lt").val() != $("#pole_edit_domain_sites_input_d_lt").attr("title")){
-             addf[$("#pole_edit_domain_sites_input_d_lt").val()] = {titles:addf[temp_var.el_target.parentElement.title].titles, sites: addf[temp_var.el_target.parentElement.title].sites};
-             delete addf[temp_var.el_target.parentElement.title];
+             addf.list[$("#pole_edit_domain_sites_input_d_lt").val()] = {titles:addf.list[temp_var.el_target.parentElement.title].titles, sites: addf.list[temp_var.el_target.parentElement.title].sites};
+             delete addf.list[temp_var.el_target.parentElement.title];
              
              message_log = "Домен \""+ $("#pole_edit_domain_sites_input_d_lt").val()+"\" был успешно изменен!"; 
              } else  message_log = "Домен \""+ $("#pole_edit_domain_sites_input_d_lt").val()+"\" не изменен, т.к. изменений не было!"; 
@@ -535,16 +543,16 @@ if($("#pole_edit_domain_sites").is(":visible")){
              if(!checInputValue({text:$("#pole_edit_domain_sites_input_d_lt").val(),tip:"title"})){return;}
              if(!checInputValue({text:$("#pole_edit_domain_sites_input_linkt").val(),tip:"link"})){return;}         
          
-             var link_pos=temp_var.el_target.id.match(/link_edit_(\d+)/i)[1]; // поиск в ид номер ссылки
-             var pos_v_object=temp_var.el_target.parentElement.parentElement.parentElement.childNodes[0].title; // ищем название объекта 
-             var title_edit_save = addf[pos_v_object].titles.split(",");
-             var link__edit_save = addf[pos_v_object].sites.split(",");
+             var link_pos=temp_var.el_target.id.match(/link_edit_(\d+)/i)[1], // поиск в ид номер ссылки
+                 pos_v_object=temp_var.el_target.parentElement.parentElement.parentElement.childNodes[0].title, // ищем название объекта
+                 title_edit_save = addf.list[pos_v_object].titles.split(","),
+                 link__edit_save = addf.list[pos_v_object].sites.split(",");
 
              title_edit_save[link_pos] = escape($("#pole_edit_domain_sites_input_d_lt").val());
              link__edit_save[link_pos] = encodeURIComponent($("#pole_edit_domain_sites_input_linkt").val());
 
-             addf[pos_v_object].titles = title_edit_save.join(",");           
-             addf[pos_v_object].sites = link__edit_save.join(","); // объединяем ссылки и заголовки в своих ячейках объекта в строку       
+             addf.list[pos_v_object].titles = title_edit_save.join(",");
+             addf.list[pos_v_object].sites = link__edit_save.join(","); // объединяем ссылки и заголовки в своих ячейках объекта в строку
          
              message_log = "Ссылка \""+$("#pole_edit_domain_sites_input_d_lt").val()+"\" была успешно изменена!";          
      }
@@ -580,11 +588,12 @@ if(!$("#pole_edit_domain_sites").is(":visible")){
         
             $("#shadow_kogda_edit").fadeIn(1000,function(){$("#pole_edit_domain_sites").fadeIn(1200);});
            
-           var link_pos=el_target.id.match(/link_edit_(\d+)/i)[1]; // поиск в ид номер ссылки
-           var pos_v_object=el_target.parentElement.parentElement.parentElement.childNodes[0].title; // ищем название объекта  
+           var link_pos=el_target.id.match(/link_edit_(\d+)/i)[1], // поиск в ид номер ссылки
+               pos_v_object=el_target.parentElement.parentElement.parentElement.childNodes[0].title, // ищем название объекта
            
-           var title_link = unescape(addf[pos_v_object].titles.split(",")[link_pos]);
-           var href_link = decodeURIComponent(addf[pos_v_object].sites.split(",")[link_pos]);
+               title_link = unescape(addf.list[pos_v_object].titles.split(",")[link_pos]),
+               href_link = decodeURIComponent(addf.list[pos_v_object].sites.split(",")[link_pos]);
+
            $("#pole_edit_domain_sites_input_d_lt").attr("title",title_link);
            $("#pole_edit_domain_sites_input_d_lt").val(title_link);
            $("#pole_edit_domain_sites_input_linkt").attr("title",title_link);            
@@ -601,10 +610,11 @@ if(!$("#pole_edit_domain_sites").is(":visible")){
     
 function showHideElement(param, func){
     if(!param.el || param.el.length<1) return;
-    var el = param.el; 
-    var tip = param.tip || "toggle";
-    var anim_time = param.time || 1000;
-    var func_ = param.func || null;
+    var el = param.el,
+        tip = param.tip || "toggle",
+        anim_time = param.time || 1000,
+        func_ = param.func || null;
+
     switch(tip){
         case "toggle":$(el).toggle(anim_time, func_);
             break;
@@ -633,21 +643,21 @@ function showAlert(text, colors){
 
 function deleteLink(el){
 try{
-    var el_target = el.target;
-    var link_pos=el_target.id.match(/link_del_(\d+)/i)[1]; // поиск в ид номер ссылки
-    var pos_v_object=el_target.parentElement.parentElement.parentElement.childNodes[0].title; // ищем название объекта
+    var el_target = el.target,
+        link_pos=el_target.id.match(/link_del_(\d+)/i)[1], // поиск в ид номер ссылки
+        pos_v_object=el_target.parentElement.parentElement.parentElement.childNodes[0].title, // ищем название объекта
 
-    var link_split_dlya_udal=addf[pos_v_object].sites.split(","); // разделяем ссылки
-    var link_split_titles_dlya_udal = addf[pos_v_object].titles.split(","); // разделяем заголовки ссылок
+        link_split_dlya_udal = addf.list[pos_v_object].sites.split(","), // разделяем ссылки
+        link_split_titles_dlya_udal = addf.list[pos_v_object].titles.split(","); // разделяем заголовки ссылок
 
     link_split_dlya_udal.splice(link_pos, 1); // удаляем выбранный элемент из ссылок
     link_split_titles_dlya_udal.splice(link_pos, 1); // удаляем выбранный элемент из заголовков
 
     if(link_split_dlya_udal.length>0 && link_split_titles_dlya_udal.length>0){
-    addf[pos_v_object].sites = link_split_dlya_udal.join(","); // объединяем ссылки и заголовки в своих ячейках объекта в строку
-    addf[pos_v_object].titles = link_split_titles_dlya_udal.join(",");
+    addf.list[pos_v_object].sites = link_split_dlya_udal.join(","); // объединяем ссылки и заголовки в своих ячейках объекта в строку
+    addf.list[pos_v_object].titles = link_split_titles_dlya_udal.join(",");
     } else {
-    delete addf[pos_v_object];     // если все ссылки были удалены, удаляем и сам элемент объекта   
+    delete addf.list[pos_v_object];     // если все ссылки были удалены, удаляем и сам элемент объекта
     }
     $(el_target).slideUp(1000,function(){
     saveToStorage();
@@ -660,16 +670,17 @@ try{
 }
 
 function search_in_obj(){
-    var copy_addf ={};
-    var kol = 0;
-    var arr = ["",[]];
-    for(var domeni in addf){
-    var search_text = $("#divFav_B_search_button").val();
-    if(domeni.indexOf(search_text) >=0){
-    copy_addf[domeni] = addf[domeni];
-    arr[1].push(kol);
-    }
-    kol++;
+    var copy_addf = {},
+        kol = 0,
+        arr = ["",[]];
+
+    for(var domeni in addf.list){
+        var search_text = $("#divFav_B_search_button").val();
+        if(domeni.indexOf(search_text) >=0){
+            copy_addf[domeni] = addf.list[domeni];
+            arr[1].push(kol);
+        }
+        kol++;
     }
     arr[0] = copy_addf;
     console.log(arr);
@@ -691,20 +702,20 @@ var div=document.createElement(el_n);
 var disp =[];
 function updateList(){
 try{
-    var dlina_nazvania = 20; // Длина обрезки заголовков
-    var divFav_WinInne = document.getElementsByClassName("div_Fav_window_inner")[0];
+    var dlina_nazvania = 20, // Длина обрезки заголовков
+        divFav_WinInne = document.getElementsByClassName("div_Fav_window_inner")[0];
     divFav_WinInne.innerHTML="";
-    var kol_ob =0;
+    var kol_ob =0,
     
-    var input_search = $("#divFav_B_search_button");
-    var copy_addf = null;
-    var object_selected = addf;
-    var arrs_search = null;
-    var search_work = false;
+    input_search = $("#divFav_B_search_button"),
+    copy_addf = null,
+    object_selected = addf.list,
+    arrs_search = null,
+    search_work = false;
 
     if(input_search.val().length<=0){
     // ################# NO FILTERS
-    object_selected = addf;
+    object_selected = addf.list;
     } else {
     // ################# FILTERS 
     arrs_search = search_in_obj();  
@@ -716,15 +727,15 @@ try{
     var object_addf = object_selected;
     
     for(var domeni in object_addf){
-    var links = object_addf[domeni].sites.split(",");
-    var links_titles = object_addf[domeni].titles.split(",");        
+    var links = object_addf[domeni].sites.split(","),
+    links_titles = object_addf[domeni].titles.split(","),
 
-    var rcol = "#"+hex(Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255))+", #"+ hex(Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255));    
-    var body_domena = makeElem("div", null, "body_domena_el", null, null, null);
-    var title_domena = makeElem("div", "background: linear-gradient("+rcol+"); border-radius: 8px 8px 8px 8px;", "div_Fav_win_title", ((domeni.length>20)?domeni.substr(0,20)+" ...":domeni), domeni, "domen_"+((!search_work)?kol_ob:arrs_search[1][kol_ob]));
-    var delete_button_domain = makeElem("div", null, "div_Fav_button div_Fav_del_button", "x", "Удалить домен!", null);
-    var edit_button_domain = makeElem("div", null, "div_Fav_button div_Fav_ed_button", "e", "Править домен!", null);        
-    var hide_elem =  makeElem("div", "display:"+((disp[kol_ob])?"block":"none"), null, null, null, null);
+    rcol = "#"+hex(Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255))+", #"+ hex(Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)),
+    body_domena = makeElem("div", null, "body_domena_el", null, null, null),
+    title_domena = makeElem("div", "background: linear-gradient("+rcol+"); border-radius: 8px 8px 8px 8px;", "div_Fav_win_title", ((domeni.length>20)?domeni.substr(0,20)+" ...":domeni), domeni, "domen_"+((!search_work)?kol_ob:arrs_search[1][kol_ob])),
+    delete_button_domain = makeElem("div", null, "div_Fav_button div_Fav_del_button", "x", "Удалить домен!", null),
+    edit_button_domain = makeElem("div", null, "div_Fav_button div_Fav_ed_button", "e", "Править домен!", null),
+    hide_elem =  makeElem("div", "display:"+((disp[kol_ob])?"block":"none"), null, null, null, null);
         
     
     body_domena.appendChild(title_domena); 
@@ -737,8 +748,8 @@ try{
         
     $(title_domena).click(function(){
            $(this).next("div").toggle(1000, function(){
-               var self =  $(this).prev("div").attr("id");
-               var display_prop = parseInt(self.match(/domen_(\d+)/i)[1]);
+               var self =  $(this).prev("div").attr("id"),
+                   display_prop = parseInt(self.match(/domen_(\d+)/i)[1]);
 
                if($(this).css("display") === "block"){
                $(this).prev("div").css("border-radius", "8px 8px 0px 0px");
@@ -754,12 +765,12 @@ try{
         
         var body_links = "";
         for(var i=0;i<links.length;i++){
-        var titles = unescape(links_titles[i]);
-        var divbody_button_edit_link = makeElem("div", null, "div_Fav_button_link div_Fav_ed_button_link", "e", "Править ссылку!", "link_edit_"+i);            
-        var divbody_button_del_link = makeElem("div", null, "div_Fav_button_link div_Fav_del_button_link", "x", "Удалить ссылку!", "link_del_"+i);
-        var divbody_link_p = makeElem("div", "text-align: start;", null, null, null, domeni+"_link_"+i);
+        var titles = unescape(links_titles[i]),
+        divbody_button_edit_link = makeElem("div", null, "div_Fav_button_link div_Fav_ed_button_link", "e", "Править ссылку!", "link_edit_"+i),
+        divbody_button_del_link = makeElem("div", null, "div_Fav_button_link div_Fav_del_button_link", "x", "Удалить ссылку!", "link_del_"+i),
+        divbody_link_p = makeElem("div", "text-align: start;", null, null, null, domeni+"_link_"+i),
             
-        var divbody_link_a = document.createElement("a");
+        divbody_link_a = document.createElement("a");
             divbody_link_a.className="div_Fav_ahref";
             divbody_link_a.href=decodeURIComponent(links[i]);
             divbody_link_a.title=titles;
@@ -786,7 +797,7 @@ try{
     }
     if(kolObj (object_addf) < 1)  divFav_WinInne.innerHTML="Нечего не добавленно!";
     
-    document.getElementById("texarea_set").value=JSON.stringify(addf);
+    document.getElementById("texarea_set").value=JSON.stringify(addf.list);
 }catch(e){
 alert(e);
 }    
@@ -823,19 +834,19 @@ function addSiteFav(){
     wind_loc =  [encodeURIComponent(window.location.href), (/^xn--/.test(window.location.hostname)) ? punycode.ToUnicode (window.location.hostname): window.location.hostname, (document.title.length === 0 || document.title === "")?"Без названия":escape(document.title)]; // Создаем массив с элементами текущей старницы
 
     if(wind_loc && wind_loc !== null && wind_loc !== undefined && wind_loc.length>0){
-    if(addf.hasOwnProperty(wind_loc[1])){ // domen uge est v baze
+    if(addf.list.hasOwnProperty(wind_loc[1])){ // domen uge est v baze
         // proveraem est' li link v spiske
-        var list_sites = addf[wind_loc[1]].sites.split(",");
-        var list_sites_titles = addf[wind_loc[1]].titles.split(","); 
+        var list_sites = addf.list[wind_loc[1]].sites.split(","),
+            list_sites_titles = addf.list[wind_loc[1]].titles.split(",");
 
         if(list_sites.indexOf(wind_loc[0]) < 0){ // esli net to dobavlaem
             list_sites.push(wind_loc[0]);
             list_sites_titles.push(wind_loc[2]);            
-            addf[wind_loc[1]].sites = list_sites.join(",");
-            addf[wind_loc[1]].titles = list_sites_titles.join(",");
+            addf.list[wind_loc[1]].sites = list_sites.join(",");
+            addf.list[wind_loc[1]].titles = list_sites_titles.join(",");
         }
       } else { // domen ne nayden dobavlaem domen a potom i ssilku
-           addf[wind_loc[1]] = {sites:wind_loc[0], titles:wind_loc[2]}; 
+           addf.list[wind_loc[1]] = {sites:wind_loc[0], titles:wind_loc[2]};
       }
         saveToStorage();
         showAlert("Ссылка \""+wind_loc[1]+"\" добавлена!",{col1:"rgba(0, 255, 79, 0.8)",col2:"rgba(9, 84, 6, 0.75)",text_col:"white"});
@@ -846,31 +857,31 @@ function addSiteFav(){
 
 /*
 function loading_other_view(){
-var setting_other_view = document.getElementById("setting_other_view");
-var db = addf;
+var setting_other_view = document.getElementById("setting_other_view"),
+db = addf.list;
     setting_other_view.innerHTML = "";
 if($(".setting_button_panel").is(":visible")){
     
     
     for(var zn in db){
-    var parseiz_db = makeElem("div", "margin:10px auto; cursor:pointer;", "", "<div style=\"width: 200px;margin: 0 auto;background: #007cff;padding: 3px;color: white;\">"+zn+"</div>", zn, null);
+    var parseiz_db = makeElem("div", "margin:10px auto; cursor:pointer;", "", "<div style=\"width: 200px;margin: 0 auto;background: #007cff;padding: 3px;color: white;\">"+zn+"</div>", zn, null),
       
-    var titles_pole = makeElem("div", "display:none; padding: 5px;", "", null, "pole_titles_from_"+zn, null);
+    titles_pole = makeElem("div", "display:none; padding: 5px;", "", null, "pole_titles_from_"+zn, null);
         
         parseiz_db.addEventListener("click", function(e){
             if(e.target.id !== "no_hide") e.target.nextElementSibling.style.display =(e.target.nextElementSibling.style.display === "block")?"none":"block";
         });
         
-    var titles_sp = db[zn].titles.split(","); 
-    var sites_sp = db[zn].sites.split(",");
+    var titles_sp = db[zn].titles.split(","),
+     sites_sp = db[zn].sites.split(",");
         
         for(var i=0; i<titles_sp.length;i++){
-               var div_s = makeElem("div", "margin-top:5px;border:1px solid black;", "", "<div style=\"background: #6d9fd4;color: white;padding: 3px;\">"+unescape(titles_sp[i]).substring(0,20)+"..."+"</div>", unescape(titles_sp[i]).substring(0,50)+"...", null);
-               var sites_pole = makeElem("div", "display:none;padding: 5px;", "", null, "pole_sites_from_"+zn, null);
+               var div_s = makeElem("div", "margin-top:5px;border:1px solid black;", "", "<div style=\"background: #6d9fd4;color: white;padding: 3px;\">"+unescape(titles_sp[i]).substring(0,20)+"..."+"</div>", unescape(titles_sp[i]).substring(0,50)+"...", null),
+                sites_pole = makeElem("div", "display:none;padding: 5px;", "", null, "pole_sites_from_"+zn, null);
            
             for(var j=0;j<2;j++){
-               var label_pole =(j<1)?makeElem("span", "padding: 5px;", "", "Название:", null, "no_hide"):makeElem("span", "padding: 5px;", "", "Ссылка:", null, "no_hide");
-               var inp_s = document.createElement("input");
+               var label_pole =(j<1)?makeElem("span", "padding: 5px;", "", "Название:", null, "no_hide"):makeElem("span", "padding: 5px;", "", "Ссылка:", null, "no_hide"),
+                inp_s = document.createElement("input");
                    inp_s.type="text";
                    inp_s.id="no_hide";
                    inp_s.setAttribute("style","margin-top:5px;");
@@ -894,49 +905,49 @@ if($(".setting_button_panel").is(":visible")){
 @makeElem(element, style, className, InnerText, title, Id)  
 */
 function init(){
-    var divFav_panel_button=makeElem("div", "display:none;", "divFav_panel_button", null, null, null);
-    var divFav_B=makeElem("div", null, "div_FavB", "<div class=\"spanplus\">+</div>","Добавить в избранное!", null);
-    var divFav_B_show_hide=makeElem("div", null, "div_FavB", "<div class=\"spanplus\">▼</div>", "Показать/Скрыть список", null);
-    var divFav_Win=makeElem("div", "display:none;", "div_Fav_window", null, null, null);
-    var divFav_WinInner=makeElem("div", null, "div_Fav_window_inner", null, null, null);
-    var divFav_Win_alert=makeElem("div", "display:none;", "divFav_Win_alert", "Добавленно!", null, "completed_add_favb");
+    var divFav_panel_button=makeElem("div", "display:none;", "divFav_panel_button", null, null, null),
+        divFav_B=makeElem("div", null, "div_FavB", "<div class=\"spanplus\">+</div>","Добавить в избранное!", null),
+        divFav_B_show_hide=makeElem("div", null, "div_FavB", "<div class=\"spanplus\">▼</div>", "Показать/Скрыть список", null),
+        divFav_Win=makeElem("div", "display:none;", "div_Fav_window", null, null, null),
+        divFav_WinInner=makeElem("div", null, "div_Fav_window_inner", null, null, null),
+        divFav_Win_alert=makeElem("div", "display:none;", "divFav_Win_alert", "Добавленно!", null, "completed_add_favb"),
     
-    var titlediv_prog = makeElem("div", "text-align:left;", null, "", "", null);
-    var search_prog = document.createElement("input");
+        titlediv_prog = makeElem("div", "text-align:left;", null, "", "", null),
+
+        search_prog = document.createElement("input");
     search_prog.type = "text";
     search_prog.id = "divFav_B_search_button";  
     search_prog.placeholder="Искать...";
     
-    var divFav_showAll=makeElem("span", null, "divFav_showAll divFav_buttons_style", "+", "Развернуть / Свернуть", null);
+     var divFav_showAll=makeElem("span", null, "divFav_showAll divFav_buttons_style", "+", "Развернуть / Свернуть", null),
 
-    var setting_button = makeElem("span", null, "setting_button divFav_buttons_style", "♥", "Настройки", "b_opensetting");
-    var setting_button_panel = makeElem("div", "display:none;", "setting_button_panel", "<div class=\"setting_but_m\">Настройки</div><p class=\"code_setting_m\">Код настроек:</p>", null, null);
-   
-    var texarea_set = document.createElement("textarea");
+         setting_button = makeElem("span", null, "setting_button divFav_buttons_style", "♥", "Настройки", "b_opensetting"),
+         setting_button_panel = makeElem("div", "display:none;", "setting_button_panel", "<div class=\"setting_but_m\">Настройки</div><p class=\"code_setting_m\">Код настроек:</p>", null, null),
+
+         texarea_set = document.createElement("textarea");
     texarea_set.className="text_area_set";//.setAttribute("style","width: 240px; height: 170px;font-size: 10px;resize: vertical;");
     //texarea_set.setAttribute("readonly","true");
     texarea_set.id="texarea_set";
-    texarea_set.value=JSON.stringify(addf) || "";
+    texarea_set.value=JSON.stringify(addf.list) || "";
     
-    var button_backupbd = makeElem("div", null, "button_set divFav_buttons_style", "<a class='code_download_m' href='' download='backup_bd.txt'>Сделать бэкап</>", "Бэкап базы ссылок!", "b_backup");
-    button_backupbd.setAttribute("download","");
-    var button_set = makeElem("div", null, "button_set divFav_buttons_style", "Закрыть", "Закрыть", "b_close_save");
+    var button_backupbd = makeElem("div", null, "button_set divFav_buttons_style", "<a class='code_download_m' href='javascript:void(0);' download='backup_bd.txt'>Сделать бэкап</a>", "Бэкап базы ссылок!", "b_backup"),
+        button_set = makeElem("div", null, "button_set divFav_buttons_style", "Закрыть", "Закрыть", "b_close_save"),
     
     // Other view codes beta
-    //var setting_other_but = makeElem("div", "margin: 5px auto;", null, "<div style=\"background: #004f75;color: white;padding: 5px;width: 200px;margin: 0 auto;cursor: pointer;\">Смотреть код</div>", "", "setting_other_but");
-    //var setting_other_view = makeElem("div", "background: white; margin: 0 auto;width: 235px;padding: 5px;overflow-y: auto;height: 200px;display:none;", null, null, "Other View", "setting_other_view");
+    // setting_other_but = makeElem("div", "margin: 5px auto;", null, "<div style=\"background: #004f75;color: white;padding: 5px;width: 200px;margin: 0 auto;cursor: pointer;\">Смотреть код</div>", "", "setting_other_but"),
+    // setting_other_view = makeElem("div", "background: white; margin: 0 auto;width: 235px;padding: 5px;overflow-y: auto;height: 200px;display:none;", null, null, "Other View", "setting_other_view"),
     
     // Menu edit domain and links
-    var pole_edit_domain_sites = makeElem("div", null, "pole_edit_domain_sites_class", null, null, "pole_edit_domain_sites");
-    var pole_edit_domain_sites_header = makeElem("div", null, "pole_edit_domain_sites_header_class", "Редактирование<div class=\"pole_edit_domain_sites_header_x\">X</div>", null, "pole_edit_domain_sites_header");
-    
-    var html_edit_body = '<div><p>Название: </p><p id="pole_edit_domain_sites_input_linkt_p">Ссылка: </p></div><div><input type="text" style="margin-bottom: 15px;" id="pole_edit_domain_sites_input_d_lt" placeholder="Название" value=""><input type="text" id="pole_edit_domain_sites_input_linkt" placeholder="Ссылка" value=""></div>';
-    var pole_edit_domain_sites_body = makeElem("div", null, "pole_edit_domain_sites_body_class", html_edit_body, null, "pole_edit_domain_sites_body");
-    var ButtonSaveDLedit = makeElem("div",null,"Button_Panel","<div class=\"ButtonEdit\" id=\"pole_edit_domain_sites_ButtonEdit\">Сохранить</div>",null, null);
-    var shadow_kogda_edit=makeElem("div", null, null, null, null, "shadow_kogda_edit");  
-    
-        document.body.appendChild(divFav_panel_button);
-        divFav_panel_button.appendChild(divFav_B_show_hide);
+        pole_edit_domain_sites = makeElem("div", null, "pole_edit_domain_sites_class", null, null, "pole_edit_domain_sites"),
+        pole_edit_domain_sites_header = makeElem("div", null, "pole_edit_domain_sites_header_class", "Редактирование<div class=\"pole_edit_domain_sites_header_x\">X</div>", null, "pole_edit_domain_sites_header"),
+
+        html_edit_body = '<div><p>Название: </p><p id="pole_edit_domain_sites_input_linkt_p">Ссылка: </p></div><div><input type="text" style="margin-bottom: 15px;" id="pole_edit_domain_sites_input_d_lt" placeholder="Название" value=""><input type="text" id="pole_edit_domain_sites_input_linkt" placeholder="Ссылка" value=""></div>',
+        pole_edit_domain_sites_body = makeElem("div", null, "pole_edit_domain_sites_body_class", html_edit_body, null, "pole_edit_domain_sites_body"),
+        ButtonSaveDLedit = makeElem("div",null,"Button_Panel","<div class=\"ButtonEdit\" id=\"pole_edit_domain_sites_ButtonEdit\">Сохранить</div>",null, null),
+        shadow_kogda_edit= makeElem("div", null, null, null, null, "shadow_kogda_edit");
+
+    document.body.appendChild(divFav_panel_button);
+    divFav_panel_button.appendChild(divFav_B_show_hide);
 
         pole_edit_domain_sites.appendChild(pole_edit_domain_sites_header);
         pole_edit_domain_sites.appendChild(pole_edit_domain_sites_body);
@@ -970,10 +981,13 @@ function init(){
         document.body.appendChild(shadow_kogda_edit);    
 
    button_backupbd.addEventListener("click", function(){
-       var text = JSON.stringify(addf);
-       var file = new Blob([text], {type: "text/plain"});
-       this.children[0].href=URL.createObjectURL(file);
-       this.setAttribute("download","backup_bd.txt");             
+       if(this.children[0].innerText !== "Сохранить"){
+           var text = JSON.stringify(addf.list),
+               file = new Blob([text], {type: "text/plain"}),
+               URL = window.URL || window.webkitURL;
+           this.children[0].href = URL.createObjectURL(file);
+           this.setAttribute("download","backup_bd.txt");
+       }
    },false);
     
    divFav_B.addEventListener("click", addSiteFav,false);
@@ -987,47 +1001,45 @@ function init(){
     },false);
     
    texarea_set.addEventListener("input", function(){
-       if(texarea_set.value !== JSON.stringify(addf)){
-       $(".button_set")[0].textContent="Сохранить";
+       if(texarea_set.value !== JSON.stringify(addf.list)){
+           $("#b_backup a").attr("title","Сохранить").text("Сохранить");
        } else {
-       $(".button_set")[0].textContent="Закрыть";           
+           $("#b_backup a").attr("title","Сделать бэкап").text("Сделать бэкап");
        }
    },false);  
    
     // Привязываем событие для мыши, для остеживания курсора > указаннного значеня для появления кнопок
    $(document.documentElement).mousemove(showpanel_button_right_plus);
+
+   $("#b_close_save").add("#b_opensetting").click(function(){
+           $(".setting_button_panel").fadeToggle('slow', function(){/*loading_other_view();*/});
+   });
    
-   $(".setting_button, .button_set").on( "click",function(){       
-       if($(".button_set")[0].textContent==="Сохранить"){
-       if(confirm("ВНИМАНИЕ:\nВы внесли изменения в базу данных ссылок!\nНеверные изминения в структуре может повредить всю базу!\nСделайте резервную копию!\nВы хотите внести сохранить изменения ?")){
-           let txtVal = $("#texarea_set").val();
-           if(txtVal != "" && /^\s*$/.test(txtVal) && !/^{.*}$/.test(txtVal)){
-               alert("Неправильные данные!");
-               texarea_set.value = JSON.stringify(addf);
-               return;
-           }
-           
-           try{
-               JSON.parse(txtVal);
-           }catch(e){
-               alert("Неправильные данные!\n"+e.name);
-               texarea_set.value = JSON.stringify(addf);
-               return;
-           }
+   $("#b_backup").on( "click",function(){
+       if($("#b_backup a").text() === "Сохранить"){
+           if(confirm("ВНИМАНИЕ:\nВы внесли изменения в базу данных ссылок!\nНеверные изминения в структуре может повредить всю базу!\nСделайте резервную копию!\nВы хотите внести сохранить изменения ?")){
+               let txtVal = $("#texarea_set").val();
+               if(txtVal != "" && /^\s*$/.test(txtVal) && !/^{.*}$/.test(txtVal)){
+                   alert("Неправильные данные!");
+                   texarea_set.value = JSON.stringify(addf.list);
+                   return;
+               }
 
-       saveToStorage(txtVal);
-       showAlert("Данные успешно сохранены в базе ссылок!",{col1:"rgba(0, 255, 79, 0.8)",col2:"rgba(9, 84, 6, 0.75)",text_col:"white"});
-       } else {
-       showAlert("Вы отказались от сохранения данных!",{col1:"rgba(243, 30, 161, 0.83)",col2:"rgba(55, 1, 13, 0.74)",text_col:"white"});
-       texarea_set.value = JSON.stringify(addf);
-       $(".button_set")[0].textContent="Закрыть";  
-       }
-       }
+               try{
+                   JSON.parse(txtVal);
+               }catch(e){
+                   alert("Неправильные данные!\n"+e.name);
+                   texarea_set.value = JSON.stringify(addf.list);
+                   return;
+               }
 
-       if((this.id === "b_close_save" && this.textContent==="Закрыть") || this.id === "b_opensetting"){
-           $(".setting_button_panel").toggle(1000, function(){
-           //loading_other_view();
-           });
+               saveToStorage(txtVal);
+               showAlert("Данные успешно сохранены в базе ссылок!",{col1:"rgba(0, 255, 79, 0.8)",col2:"rgba(9, 84, 6, 0.75)",text_col:"white"});
+           } else {
+               showAlert("Вы отказались от сохранения данных!",{col1:"rgba(243, 30, 161, 0.83)",col2:"rgba(55, 1, 13, 0.74)",text_col:"white"});
+               texarea_set.value = JSON.stringify(addf.list);
+               $("#b_backup a").text("Сделать бэкап");
+           }
        }
    });
     
@@ -1049,38 +1061,58 @@ function init(){
     $("#divFav_B_search_button").on("input propertychange",function(){
     updateList();    
     });
-  
-   switch(Math.floor(Math.random()*3)){
-     case 0:  $(divFav_B_show_hide).click(function(){$(".div_Fav_window").toggle(1000,function(){divFav_B_show_hide.childNodes[0].innerHTML =(divFav_B_show_hide.childNodes[0].innerText != "▲")?"▲":"▼";});    });
-     break;
-     case 1:  $(divFav_B_show_hide).click(function(){$(".div_Fav_window").slideToggle(1000,function(){divFav_B_show_hide.childNodes[0].innerHTML =(divFav_B_show_hide.childNodes[0].innerText != "▲")?"▲":"▼";});    });
-     break;
-     case 2:  $(divFav_B_show_hide).click(function(){$(".div_Fav_window").fadeToggle(1000,function(){divFav_B_show_hide.childNodes[0].innerHTML =(divFav_B_show_hide.childNodes[0].innerText != "▲")?"▲":"▼";});    });
+
+let typeView = Math.floor(Math.random()*3);
+
+$(divFav_B_show_hide).click(function(){
+    if($(".div_Fav_window .div_Fav_window_inner").children().length == 0 && addf.list && addf.list !== null && addf.list !== undefined){
+        updateList();
     }
+
+     if(typeView === 0){
+         $(".div_Fav_window").toggle(1000,function(){
+             divFav_B_show_hide.childNodes[0].innerHTML =(divFav_B_show_hide.childNodes[0].innerText !== "▲")?"▲":"▼";
+         });
+     } else if(typeView === 1){
+         $(".div_Fav_window").slideToggle(1000,function(){
+             divFav_B_show_hide.childNodes[0].innerHTML =(divFav_B_show_hide.childNodes[0].innerText !== "▲")?"▲":"▼";
+         });
+     } else if(typeView === 2){
+         $(".div_Fav_window").fadeToggle(1000,function(){
+             divFav_B_show_hide.childNodes[0].innerHTML =(divFav_B_show_hide.childNodes[0].innerText !== "▲")?"▲":"▼";
+         });
+     }
+});
+
 // Отобразить сохраненные значения при старте
-    if(addf && addf !== null && addf !== undefined){
+/*    if(addf.list && addf.list !== null && addf.list !== undefined){
         try{
         updateList();
         } catch(e){
         alert(e);
         }
-    }
+    }*/
 }
     
 function showpanel_button_right_plus( event ) {
 
-   var xproc = (event.pageX*100)/document.documentElement.clientWidth;
+    var xproc = (event.pageX*100)/document.documentElement.clientWidth;
   // var yproc = ((event.pageY-515)*100)/(document.documentElement.clientHeight);
-   if(document.getElementsByClassName("divFav_panel_button")[0]) {   
-   if(xproc > 70){
-       $(".divFav_panel_button").fadeIn("slow");
-   } else if(!$("#pole_edit_domain_sites").is(":visible")){
-       $(".divFav_panel_button").fadeOut(1000);
-       if($(".div_FavB")[0].childNodes[0].innerText != "▲") $(".div_Fav_window").fadeOut(1000,function(){$(".div_FavB")[0].childNodes[0].innerHTML =($(".div_FavB")[0].childNodes[0].innerText != "▲")?"▲":"▼";}); 
-       
-   }
-   }
-  }
+    if(document.getElementsByClassName("divFav_panel_button")[0]) {
+        if(xproc > 70){
+            $(".divFav_panel_button").fadeIn("slow");
+        } else if(!$("#pole_edit_domain_sites").is(":visible")){
+            $(".divFav_panel_button").fadeOut("slow");
+
+            if($(".div_FavB")[0].childNodes[0].innerText !== "▲"){
+                $(".div_Fav_window").fadeOut(1000,function(){
+                    $(".div_FavB")[0].childNodes[0].innerHTML = ($(".div_FavB")[0].childNodes[0].innerText != "▲")?"▲":"▼";
+                });
+            }
+
+        }
+    }
+}
     init();
     
 })();
