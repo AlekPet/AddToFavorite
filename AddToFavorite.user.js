@@ -6,8 +6,8 @@
 // @author       AlexPet | e-mail: alexepetrof@gmail.com
 // @license     MIT;  https://raw.githubusercontent.com/AlekPet/AddToFavorite/master/LICENSE
 // @match        http*://*/*
-// @updateURL    https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
-// @downloadURL  https://github.com/AlekPet/AddToFavorite/raw/master/AddToFavorite.user.js
+// @updateURL    https://raw.githubusercontent.com/AlekPet/AddToFavorite/master/AddToFavorite.user.js
+// @downloadURL  https://raw.githubusercontent.com/AlekPet/AddToFavorite/master/AddToFavorite.user.js
 // @icon          https://raw.githubusercontent.com/AlekPet/AddToFavorite/master/assets/images/icon.png
 // @run-at document-end
 // @noframes
